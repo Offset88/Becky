@@ -37,7 +37,7 @@ class Bot(BaseBot):
         await self.highrise.walk_to(Position(17.5 , 0.0 , 14.0 , "FrontRight"))
     async def on_user_join(self, user: User, position: Position | AnchorPosition) -> None:
         print(f"{user.username} entrou na sala")   
-        await self.highrise.chat(f"✨BIENVENUE✨ {user.username}✨ 💠A LA BDN DE RENCONTRE!.Pour les danses utilise de 1 à 95")
+        await self.highrise.chat(f"✨BIENVENUE✨ {user.username}✨Pour les danses utilise de 1 à 95")
       
         await self.highrise.send_emote("idle_singing")
       
@@ -1243,12 +1243,12 @@ class Bot(BaseBot):
           await                     self.teleport_to_user(user, target_username)
 
         if                            message.startswith("Summon") or          message.startswith("/summon") or  message.startswith("!summon"):
-          if user.username == "_THE_MAN_BECKY" or user.username == "didyousaydonut" or user.username == "Demic._" or user.username == "Mini_sad" or user.username == "f__7oo" or user.username == "H.kakashi" or user.username == "Just_xx":
+          if user.username == "daniel_offset" or user.username == "Silencieuxx" or user.username == "fanny_stone" or user.username == "Mini_sad" or user.username == "f__7oo" or user.username == "H.kakashi" or user.username == "Just_xx":
            target_username = message.split("@")[-1].strip()
            await self.teleport_user_next_to(target_username, user)
     
         if message.startswith("kick"):
-          if user.username == "_THE_MAN_BECKY" or user.username == "didyousaydonut" or user.username == "Demic._" or user.username == "Mini_sad" or user.username == "f__7oo" or user.username == "H.kakashi" or user.username == "Just_xx":
+          if user.username == "daniel_offset" or user.username == "didyousaydonut" or user.username == "Demic._" or user.username == "Mini_sad" or user.username == "f__7oo" or user.username == "H.kakashi" or user.username == "Just_xx":
               pass
           else:
               await self.highrise.chat("Pas la permission.")
@@ -1410,14 +1410,14 @@ class Bot(BaseBot):
         print(f"{user.username} whispered: {message}")
 
         if message.startswith("/fly"):
-          if user.username == "R0__Sa":
+          if user.username == "daniel_offset":
             await self.teleporter(message)
 
         if        message.startswith("/") or message.startswith("!"):
             await self.command_handler(user, message)
 
         if              message.startswith("gold") or       message.startswith("carteira"):
-          if user.username == "R0__Sa":
+          if user.username == "daniel_offset":
             wallet = (await self.highrise.get_wallet()).content
             await self.highrise.send_whisper(user.id,f"VALEUR TOTAL : {wallet[0].amount} {wallet[0].type}")
             await self.highrise.send_emote("emote-bunnyhop")
@@ -1430,5 +1430,5 @@ class Bot(BaseBot):
 
     async def on_user_leave(self, user: User) -> None:
         print(f"{user.username} saiu da sala")
-        await self.highrise.chat(f"Au revoir @{user.username} j'espére que t'as bien profité❤️")
+        await self.highrise.chat(f"Goodbye @{user.username} ")
         await self.highrise.send_emote("dance-kawai")
